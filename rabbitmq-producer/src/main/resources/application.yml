@@ -2,3 +2,10 @@ server:
   port: 8080
   servlet:
     context-path: /rabbitme/producer
+spring:
+  rabbitmq:
+    host: 121.40.240.151
+    port: 5672
+    username: jinping
+    password: 123456
+    virtual-host: /rabbitmqTest
