@@ -29,7 +29,7 @@ public class MessageListenerConfig {
     private DirectReceiverAck2 directReceiverAck2;
 
 
-    @Bean
+    /*@Bean
     public SimpleMessageListenerContainer simpleMessageListenerContainer() {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);
         container.setConcurrentConsumers(1);
@@ -42,7 +42,7 @@ public class MessageListenerConfig {
         container.setMessageListener(directReceiverAck1);
 
         return container;
-    }
+    }*/
     /*@Bean
     public SimpleMessageListenerContainer simpleMessageListenerContainer2() {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);
