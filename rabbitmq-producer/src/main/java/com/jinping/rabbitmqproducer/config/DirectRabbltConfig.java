@@ -22,6 +22,11 @@ public class DirectRabbltConfig {
     public Queue TestDirectQueue(){
         return new Queue("TestDirectQueue",true);
     }
+
+    /**
+     * 定义队列2
+     * @return
+     */
     @Bean
     public Queue TestDirectQueue1() {
         return new Queue("TestDirectQueue1",true);
@@ -37,13 +42,18 @@ public class DirectRabbltConfig {
     }
 
     /**
-     * 绑定关系
+     * 绑定关系1
      * @return
      */
     @Bean
     public Binding bindingDirect(){
         return BindingBuilder.bind(TestDirectQueue()).to(TestDirectExchange()).with("info");
     }
+
+    /**
+     * 绑定关系2
+     * @return
+     */
     @Bean
     public Binding bindingDirect1(){
         return BindingBuilder.bind(TestDirectQueue1()).to(TestDirectExchange()).with("info");

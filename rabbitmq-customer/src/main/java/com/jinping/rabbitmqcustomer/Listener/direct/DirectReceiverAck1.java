@@ -1,4 +1,4 @@
-package com.jinping.rabbitmqcustomer.Listener;
+package com.jinping.rabbitmqcustomer.Listener.direct;
 
 import com.rabbitmq.client.Channel;
 import org.springframework.amqp.core.Message;

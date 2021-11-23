@@ -11,8 +11,17 @@ class RabbitmqProducerApplicationTests {
     @Autowired
     RabbitTemplate rabbitTemplate;
     @Test
-    public void test1(){
+    public void directTest(){
         rabbitTemplate.convertAndSend("TestDirectExchange","info","Direct Message");
+    }
+    @Test
+    public void topicTest(){
+        rabbitTemplate.convertAndSend("TestTopicExchange","topic.info","Topic Message: routingKey: topic.info");
+        rabbitTemplate.convertAndSend("TestTopicExchange","topic.info.info","Topic Message: routingKey: topic.info.info");
+    }
+    @Test
+    public void FanoutTest(){
+        rabbitTemplate.convertAndSend("TestFanoutExchange",null,"Fanout Message");
     }
 
 }

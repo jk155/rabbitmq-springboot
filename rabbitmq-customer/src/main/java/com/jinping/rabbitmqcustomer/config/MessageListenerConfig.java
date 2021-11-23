@@ -1,12 +1,9 @@
 package com.jinping.rabbitmqcustomer.config;
 
-import com.jinping.rabbitmqcustomer.Listener.DirectReceiverAck1;
-import com.jinping.rabbitmqcustomer.Listener.DirectReceiverAck2;
-import org.springframework.amqp.core.AcknowledgeMode;
+import com.jinping.rabbitmqcustomer.Listener.direct.DirectReceiverAck1;
+import com.jinping.rabbitmqcustomer.Listener.direct.DirectReceiverAck2;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
-import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
