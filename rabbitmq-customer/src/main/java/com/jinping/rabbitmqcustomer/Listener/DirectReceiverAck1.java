@@ -12,5 +12,6 @@ public class DirectReceiverAck1 implements ChannelAwareMessageListener {
     public void onMessage(Message message, Channel channel) throws Exception {
         System.out.println("Direct1消费");
         channel.basicAck(message.getMessageProperties().getDeliveryTag(), true);
+        //channel.basicNack(message.getMessageProperties().getDeliveryTag(),false,true);
     }
 }

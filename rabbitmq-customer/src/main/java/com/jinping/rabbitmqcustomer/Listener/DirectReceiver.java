@@ -1,4 +1,3 @@
-/*
 package com.jinping.rabbitmqcustomer.Listener;
 
 import com.rabbitmq.client.Channel;
@@ -16,7 +15,6 @@ public class DirectReceiver {
     @RabbitListener(queues = "TestDirectQueue")
     public void process(Channel channel, Message message) throws IOException, InterruptedException {
         System.out.println("DirectListener接受到的消息:"+new String(message.getBody()));
-
+        channel.basicNack(message.getMessageProperties().getDeliveryTag(),false,true);
     }
 }
-*/
