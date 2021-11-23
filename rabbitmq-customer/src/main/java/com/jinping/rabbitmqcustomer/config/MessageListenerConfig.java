@@ -2,8 +2,11 @@ package com.jinping.rabbitmqcustomer.config;
 
 import com.jinping.rabbitmqcustomer.Listener.direct.DirectReceiverAck1;
 import com.jinping.rabbitmqcustomer.Listener.direct.DirectReceiverAck2;
+import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -26,7 +29,7 @@ public class MessageListenerConfig {
     private DirectReceiverAck2 directReceiverAck2;
 
 
-    /*@Bean
+    @Bean
     public SimpleMessageListenerContainer simpleMessageListenerContainer() {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);
         container.setConcurrentConsumers(1);
@@ -34,10 +37,12 @@ public class MessageListenerConfig {
         container.setAcknowledgeMode(AcknowledgeMode.MANUAL); // RabbitMQ默认是自动确认，这里改为手动确认消息
         //设置一个队列
         container.setQueueNames("TestDirectQueue");
+        //告诉代理在单个请求中要向每个消费者发送多少条消息。通常可以将其设置得相当高以提高吞吐量。
+        //container.setPrefetchCount();
         container.setMessageListener(directReceiverAck1);
 
         return container;
-    }*/
+    }
     /*@Bean
     public SimpleMessageListenerContainer simpleMessageListenerContainer2() {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);
