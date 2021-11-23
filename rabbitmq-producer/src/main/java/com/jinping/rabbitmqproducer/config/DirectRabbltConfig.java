@@ -22,6 +22,10 @@ public class DirectRabbltConfig {
     public Queue TestDirectQueue(){
         return new Queue("TestDirectQueue",true);
     }
+    @Bean
+    public Queue TestDirectQueue1() {
+        return new Queue("TestDirectQueue1",true);
+    }
 
     /**
      * 定义直连交换机
@@ -39,5 +43,9 @@ public class DirectRabbltConfig {
     @Bean
     public Binding bindingDirect(){
         return BindingBuilder.bind(TestDirectQueue()).to(TestDirectExchange()).with("info");
+    }
+    @Bean
+    public Binding bindingDirect1(){
+        return BindingBuilder.bind(TestDirectQueue1()).to(TestDirectExchange()).with("info");
     }
 }

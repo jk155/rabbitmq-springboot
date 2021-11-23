@@ -1,0 +1,13 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /rabbitme/customer
+spring:
+  rabbitmq:
+    host: 121.40.240.151
+    port: 5672
+    username: jinping
+    password: 123456
+    virtual-host: /rabbitmqTest
+
+
