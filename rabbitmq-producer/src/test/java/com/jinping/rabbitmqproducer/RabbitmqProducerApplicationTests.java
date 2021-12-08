@@ -1,6 +1,7 @@
 package com.jinping.rabbitmqproducer;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +11,8 @@ class RabbitmqProducerApplicationTests {
 
     @Autowired
     RabbitTemplate rabbitTemplate;
+
+
     @Test
     public void directTest(){
         rabbitTemplate.convertAndSend("TestDirectExchange","info","Direct Message");
@@ -23,5 +26,8 @@ class RabbitmqProducerApplicationTests {
     public void FanoutTest(){
         rabbitTemplate.convertAndSend("TestFanoutExchange",null,"Fanout Message");
     }
+
+
+
 
 }

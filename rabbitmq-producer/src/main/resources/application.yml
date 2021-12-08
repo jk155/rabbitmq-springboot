@@ -9,3 +9,5 @@ spring:
     username: jinping
     password: 123456
     virtual-host: /rabbitmqTest
+    #publisher-confirm-type: correlated
+    #publisher-returns: true
